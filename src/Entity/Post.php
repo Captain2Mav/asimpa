@@ -79,10 +79,18 @@ class Post
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->created_at;
     }
+
+    public function setCreatedAt(\DateTimeImmutable $created_At):static
+    {
+       $this->created_at= $created_At;
+       
+       return $this;
+    }
+
 
     public function getUser(): ?User
     {

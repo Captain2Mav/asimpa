@@ -7,6 +7,11 @@
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
 
+    <form action="{{ path('app_post_delete', {'id': post.id}) }}" method="POST">
+        <input type="hidden" name="app_post_delete" value="{{ csrf_token('delete-post-' ~ post.id) }}">
+
+         <button type="submit">Supprimer</button>
+    </form>
 {% endblock %}
 
 

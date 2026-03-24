@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Post;
+use App\Form\CommentFormType;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use DateTimeImmutable;
@@ -11,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 final class PostController extends AbstractController
 {
@@ -23,7 +26,7 @@ final class PostController extends AbstractController
         ]);
     }
              #[Route('/post/new', name:'app_post_new')]
-        
+             #[IsGranted('ROLE_ADMIN')]
         public function new(Request $request, EntityManagerInterface $em):Response
         { 
             $post= new Post();
@@ -49,16 +52,32 @@ final class PostController extends AbstractController
 
 
         #[Route('/post/{id}', name:'app_post_show')]
-        public function show(int $id, PostRepository $postRepository): Response
+        public function show(int $id, PostRepository $postRepository,Request $request ,EntityManagerInterface $em): Response
         {
             $post= $postRepository->find($id);
+             $comment = new Comment();
+
+              $form = $this->createForm(CommentFormType::class, $comment);
+              $form->handleRequest($request);
+              
+         if ($form->isSubmitted() && $form->isValid()) {
+              $comment->setPost($post);
+
+            $em->persist($comment);
+              $em->flush();
+
+         return $this->redirectToRoute('app_post_show');
+    
+}
             return $this->render('post/show.html.twig', [
                 'post' =>$post, 
             ]);
-
+             
+             
         }
 
         #[Route('/post/{id}/edit', name:'app_post_edit')]
+         #[IsGranted('ROLE_ADMIN')]
         public function edit(int $id, PostRepository $postRepository, Request $request, EntityManagerInterface $em):Response
         {
             $post= $postRepository->find($id);
@@ -80,6 +99,7 @@ final class PostController extends AbstractController
         }
 
         #[Route('/post/{id}/delete', name:'app_post_delete')]
+         #[IsGranted('ROLE_ADMIN')]
         public function delete(int $id, PostRepository $postRepository, EntityManagerInterface $entityManager, Request $request):Response
        {
         $post= $postRepository->find($id);

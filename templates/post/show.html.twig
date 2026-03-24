@@ -7,8 +7,13 @@
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
 
+  {% if is_granted('(ROLE_ADMIN)') %}
+  <a href="{{path('app_post_edit', {'id': post.id}) }}">
+  Modifier
+  </a>
+
     <form action="{{ path('app_post_delete', {'id': post.id}) }}" method="POST">
-        <input type="hidden" name="app_post_delete" value="{{ csrf_token('delete-post-' ~ post.id) }}">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete-post-' ~ post.id) }}">
 
          <button type="submit">Supprimer</button>
     </form>

@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Comment;
-use App\Entity\Post;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,10 +13,6 @@ class CommentFormType extends AbstractType
     {
         $builder
             ->add('content')
-            ->add('post', EntityType::class, [
-                'class' => Post::class,
-                'choice_label' => 'id',
-            ])
         ;
     }
 

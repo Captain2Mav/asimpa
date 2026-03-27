@@ -66,11 +66,13 @@ final class PostController extends AbstractController
             $em->persist($comment);
               $em->flush();
 
-         return $this->redirectToRoute('app_post_show');
+         return $this->redirectToRoute('app_post_show', ['id'=>$post->getId()]);
     
 }
             return $this->render('post/show.html.twig', [
-                'post' =>$post, 
+                'form' =>$form->createView(),
+                'post' =>$post
+               
             ]);
              
              

@@ -17,6 +17,31 @@
 
          <button type="submit">Supprimer</button>
     </form>
+    {% endif %}
+
+    <h4 class="mt-5">Commentaires</h4>
+
+    {% for comment in post.comments %}
+    <div class="border p-2 mb-2">
+    <p>{{comment.content}}</p>
+    </div>
+    {% else %}
+    <p>Aucun commentaire</p>
+    {% endfor %}
+
+    <div class="mt-4">
+   <h4>Ajouter un commentaire</h4>
+
+    {{ form_start(form) }}
+    <div class "mb-3">
+    {{form_label(form.content)}}
+    {{form_widget(form.content, {'attr': {'class': 'form-control'}})}}
+    </div>
+    <button class="btn btn-sucess">Commenter</button>
+    </div>
+    {{form_end(form)}}
+
+
 {% endblock %}
 
 

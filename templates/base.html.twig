@@ -18,8 +18,12 @@
 
     <header>
     <h1>ASIMPA</h1>
-     </header>
-
+     </header>   
+   {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %} 
         {% block body %}{% endblock %}
 
         <footer class="mt-auto text-center py-3">

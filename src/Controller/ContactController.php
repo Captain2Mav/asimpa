@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,19 +15,20 @@ use Symfony\Component\Routing\Attribute\Route;
 final class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request, MailerInterface $mailer ): Response
+    public function index(Request $request, MailerInterface $mailer, EntityManagerInterface $em ): Response
     {
              $contact= new Contact();
         $form = $this->createForm(ContactFormType::class, $contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
                
-          $contact = $form->getData();  
-           $email = (new Email())->from('test@test.com')
+          $contact = $form->getData();
+          $em->persist($contact);
+          $em->flush();
 
+           $email = (new Email())->from('test@test.com')
         ->to('test@test.com')
         ->subject('Nouveau message de contact')
-
         ->text( $contact->getFirstName().''. $contact->getLastName(). 'Vous a envoyé un message:'. $contact->getMessage());
        
 

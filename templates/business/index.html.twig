@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block body %}
+<section class="py-5 text-center" style="background-color:#2bb3a3; color:white;">
+<div class="container">
+<h1 class="fw-bold mb-3">
+Un accompagnement social au service des salariés
+</h1>
+<p class="lead">
+Améliorez le bien-etre au travail et accompagnez vos équipes face aux situations complexes.
+</p>
+</div>
+</section>
+
+<section class="py-5">
+    <div class="container text-center">
+
+        <h2 class="fw-bold mb-5">Des enjeux humains et professionnels</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="p-4 shadow-sm rounded border border-3">
+                    
+                    <h6>Salariés en difficulté</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 shadow-sm rounded border border-3">
+                  
+                    <h6>Baisse de performance</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 shadow-sm rounded border border-3">
+                  
+                    <h6>Stress et risques</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 shadow-sm rounded border border-3">
+                    <h6>Obligations légales</h6>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5">
+<div class="container text-center">
+<h2 class"fw-bold mb-5">Un accompagnement social externalisé</h2>
+
+<div class=row g-4 justify-content-center>
+<div class="col md-5">
+
+<div class="card p-4 shadow border-0">
+    <p>
+Nous vous proposons un accompagnement basé sur une relation de confiance,
+avec un interlocuteur unique qui suit chaque situation de manière continue.
+</p>
+
+<p>
+Chaque salarié bénéficie d'une écoute attentive et confidentielle,
+dans un cadre sécurisé et sans jugement.
+</p>
+
+<p>
+L'accompagnement est entièrement adapté à la situation,
+afin d'apporter des solutions concrètes et durables.
+</p> 
+</div> 
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section  class="py-5">
+<div class="container text-center">
+<h2 class"fw-bold mb-5">Domaines d'intervention</h2>
+
+<div class=row g-4>
+
+<div class=col-md-6>
+<div class="p-4 shadow-sm rounded border-3">
+<h6 class=fw-bold mb-3>Vie professionnelle</h6>
+
+<p class=""text-muted>
+Maintien dans l'emploi, prévention des risques psychosociaux,
+accompagnement des situations sensibles.
+</p>
+</div>
+</div>
+
+<div class="col-md-6">
+                <div class="p-4 shadow-sm rounded border-3">
+                    <h6 class="fw-bold mb-3">Vie personnelle</h6>
+                    <p class="text-muted">
+                        Logement, budget, difficultés familiales,
+                        accompagnement administratif.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h2 class="mb-4">Des bénéfices concrets</h2>
+    </div>
+  </div>
+
+  <div class="row g-4 justify-content-center text-center">
+
+    <div class="col-md-3">
+      <h6>Gain de temps</h6>
+    </div>
+
+    <div class="col-md-3">
+      <h6>Moins de stress</h6>
+    </div>
+
+    <div class="col-md-3">
+      <h6>Meilleure performance</h6>
+    </div>
+
+    <div class="col-md-3">
+      <h6>Climat social amélioré</h6>
+    </div>
+
+  </div>
+
+</div> 
+</section>
+
+<section class="py-5 text-center" style="background-color:#1f2937; color:white;">
+    <div class="container">
+
+        <h3 class="mb-3">Mettez en place un accompagnement adapté</h3>
+
+        <p class="mb-4">
+            Échangeons sur vos besoins et construisons une solution adaptée à votre entreprise.
+        </p>
+
+        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg">
+            Prendre contact
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}

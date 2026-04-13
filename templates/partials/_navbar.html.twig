@@ -4,23 +4,50 @@
     <a class="navbar-brand" href="#">ASIMPA</a>
    
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
+     <ul class="navbar-nav me-auto">
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Prestations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tarifs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Forum</a>
+    <!-- ACCUEIL -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Accueil
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ path('app_home') }}">Accueil</a></li>
+            <li><a class="dropdown-item" href="{{path('app_about')}}">Qui suis-je ?</a></li>
+            <li><a class="dropdown-item" href="{{path('app_why')}}">Pourquoi faire appel ?</a></li>
+        </ul>
+    </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-             </ul>
+    <!-- PRESTATIONS -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Prestations
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Entreprises</a></li>
+            <li><a class="dropdown-item" href="#">Organismes publics / privés</a></li>
+            <li><a class="dropdown-item" href="#">Associations</a></li>
+            <li><a class="dropdown-item" href="#">Particuliers</a></li>
+        </ul>
+    </li>
+
+    <!-- TARIFS -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">Tarifs</a>
+    </li>
+
+    <!-- FORUM -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_category') }}">Forum</a>
+    </li>
+
+    <!-- CONTACT -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+    </li>
+
+</ul> 
+
 
       <ul class"navbar-nav">
        {% if app.user %} 

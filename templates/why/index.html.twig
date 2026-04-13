@@ -1,0 +1,186 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pourquoi faire appel{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<section class="py-5 bg-light">
+    <div class="container">
+
+        <h2 class="text-center mb-5 fw-bold">
+            Des situations difficiles à gérer seul
+        </h2>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- PROBLÈMES -->
+            <div class="col-md-5">
+                <div class="p-4 shadow rounded bg-white h-100 text-center">
+
+                    <h5 class="mb-4">Problèmes</h5>
+
+                    <ul class="list-unstyled text-center">
+                        <li class="mb-2">• Difficulté à trouver les bons interlocuteurs</li>
+                        <li class="mb-2">• Démarches longues et complexes</li>
+                        <li class="mb-2">• Manque d’informations</li>
+                        <li>• Multiplication des services</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- RESSENTI -->
+            <div class="col-md-5">
+                <div class="p-4 shadow rounded bg-white h-100 text-center">
+
+                    <h5 class="mb-4">Ressenti</h5>
+
+                    <ul class="list-unstyled text-center">
+                        <li class="mb-2">• Perte de repères</li>
+                        <li class="mb-2">• Fatigue administrative</li>
+                        <li class="mb-2">• Peur du jugement</li>
+                        <li>• Abandon des démarches</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section> 
+
+<!-- ATTENTES -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+
+        <h2 class="mb-5 fw-bold">Ce que vous recherchez</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <h5> Écoute</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <h5> Rapidité</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <h5> Clarté</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <h5> Suivi personnalisé</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="py-5">
+    <div class="container text-center">
+
+        <h2 class="mb-5 fw-bold">Une solution adaptée</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    
+                    <h6>Un interlocuteur unique</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                   
+                    <h6>Accompagnement personnalisé</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    
+                    <h6>Démarches simplifiées</h6>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    
+                    <h6>Suivi structuré</h6>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- BÉNÉFICES -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+
+        <h2 class="mb-5 fw-bold">Ce que cela vous apporte</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h5> Gain de temps</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h5> Moins de stress</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h5> Meilleure compréhension</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="p-3">
+                    <h5> Accompagnement humain</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 text-center bg-dark text-white">
+    <div class="container">
+
+        <h3 class="mb-3">Ne restez plus seul face aux démarches</h3>
+
+        <p class="mb-4">
+            Un accompagnement adapté peut faire toute la différence.
+        </p>
+
+        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg">
+            Prendre contact
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}

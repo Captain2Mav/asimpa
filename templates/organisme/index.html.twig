@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<section class="py-5 text-center" style="background:linear-gradient(135deg, #2bb3a3, #1f2937); color:white;">
+<div class="container">
+<h1 class="fw-bold mb-3">Organismes publics et privés</h1>
+
+<p class="lead">
+Un accompagnement social adapté aux réalités de terrain
+</p>
+</div>
+</section>
+
+<section class="py-5">
+<div class="container">
+
+<h2 class="text-center mb-5 fw-bold">Vos réalités de terrain</h2>
+<div class="row justify-content-center">
+<div class="col-md-8">
+
+<div class"mb-4">
+<h6 class="fw-bold">01. Des situations complexes</h6>
+
+<p class=text-muted>Des publics en difficulté avec des besoins spécifiques.</p>
+</div>
+
+<div class"mb-4">
+<h6 class="fw-bold">Des parcours instables</h6>
+
+<p class=text-muted>Des situations qui necessitent un suivi régulier.</p>
+</div>
+
+<div class"mb-4">
+<h6 class="fw-bold">Des équipes mobilisées</h6>
+
+<p class=text-muted>Un manque de temps</p>
+</div>
+
+</div>
+</div>
+</div>
+<section>
+
+<section class="py-5 bg-light text-center">
+    <div class="container">
+
+        <h2 class="fw-bold mb-4">Un accompagnement en complément</h2>
+
+        <p class="text-muted mx-auto" style="max-width:600px;">
+            Nous intervenons pour renforcer vos actions,
+            en apportant un accompagnement individualisé et des solutions concrètes.
+        </p>
+
+    </div>
+</section> 
+
+<section class="py-5">
+<div class="container">
+
+<h2 class="text-center mb-5 fw-bold">Nos interventions</h2>
+<div class="row g-4">
+
+<div class="col md-3">
+<div class="p-4 border rounded text-center h-100">
+<p class="mt-3">Accompagnement individuel</p>
+</div>
+</div>
+
+<div class="col md-3">
+<div class="p-4 border rounded text-center h-100">
+<p class="mt-3">Démarches administratives</p>
+</div>
+</div>
+
+<div class="col md-3">
+<div class="p-4 border rounded text-center h-100">
+<p class="mt-3">Actions collectives</p>
+</div>
+</div>
+
+<div class="col md-3">
+<div class="p-4 border rounded text-center h-100">
+<p class="mt-3">Coordination partenaires</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="py-5 bg-light text-center">
+    <div class="container">
+
+        <h2 class="mb-4 fw-bold">Ce que cela vous apporte</h2>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+
+            <span class="badge bg-dark p-3">Suivi renforcé</span>
+            <span class="badge bg-dark p-3">Gain de temps</span>
+            <span class="badge bg-dark p-3">Actions concrètes</span>
+            <span class="badge bg-dark p-3">Meilleure coordination</span>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5 text-center">
+<div class="container">
+   <h3 class="fw-bold mb-3">Construisons une solution adaptée</h3>
+
+        <p class="text-muted mb-4">
+            Échangeons ensemble sur vos besoins de terrain.
+        </p>
+
+        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg">
+            Nous contacter
+        </a>
+
+</div>
+</section>
+{% endblock %}

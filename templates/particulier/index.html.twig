@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Particuliers{% endblock %}
+
+{% block body %}
+
+
+<section class="py-5 text-white" style="background-color:#2bb3a3;">
+    <div class="container text-center">
+
+        <h2 class="mb-5">Mes missions</h2>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-8">
+                <p>
+                    Je vous accompagne dans vos démarches administratives afin de vous aider à accéder à vos droits et à trouver des solutions adaptées à votre situation.
+                </p>
+
+                <ul class="list-unstyled mb-4">
+                    <li>• Aides sociales (CAF, CPAM, MDPH…)</li>
+                    <li>• Déclarations et dossiers administratifs</li>
+                    <li>• Retraite et démarches liées à vos droits</li>
+                </ul>
+            </div>
+
+            <div class="col-md-5">
+                <div class="p-4 bg-white text-dark rounded shadow h-100">
+                    <h5>Protéger vos proches</h5>
+                    <ul>
+                        <li>Mise sous protection (curatelle, tutelle)</li>
+                        <li>Soutien aux aidants</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="p-4 bg-white text-dark rounded shadow h-100">
+                    <h5>Difficultés personnelles</h5>
+                    <ul>
+                        <li>Séparation, divorce</li>
+                        <li>Problèmes familiaux ou éducatifs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-4 bg-white text-dark rounded shadow">
+                    <h5>Budget & logement</h5>
+                    <ul>
+                        <li>Gestion du budget et prévention des dettes</li>
+                        <li>Surendettement et solutions financières</li>
+                        <li>Aide au logement et prévention des expulsions</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-5">
+            <h4>Besoin d’aide ?</h4>
+            <p>Je suis là pour vous accompagner</p>
+
+            <a href="{{ path('app_contact') }}" class="btn btn-light px-4 py-2">
+                Prendre rendez-vous
+            </a>
+        </div>
+
+    </div>
+</section> 
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<section class="py-5" style="background:linear-gradient(135deg, #2bb3a3, #1f2937); color:white;">
+<div class="container">
+<h2 class="text-center mb-3">Les Tarifs</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+    <div class="card p-4 shadow-sm h-100 border-0 shadow" style="border-radius: 20px;">
+
+    <h5 class="fw-bold mb-3">Tarification flexible</h5>
+    <p>
+    Possibilité de paiement à l'heure ou au forfait selon votre situation.
+    </p>
+</div>
+</div>
+
+    <div class="col-md-6">
+    <div class="card p-4 shadow-sm h-100 border-0 shadow" style="border-radius: 20px;">
+
+    <h5 class="fw-bold mb-3">Transparence</h5>
+    <p>
+     Les tarifs sont adaptés pour garantir un service de qualité et personnalisé.
+    </p>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="text-center mt-5">
+    <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg px-4">
+        Demander un devis
+    </a>
+</div> 
+{% endblock %}

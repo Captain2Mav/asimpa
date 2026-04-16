@@ -8,11 +8,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class MentionsController extends AbstractController
 {
-    #[Route('/mentions', name: 'app_mentions')]
+    #[Route('/Mentions légales', name: 'app_mentions')]
     public function index(): Response
     {
         return $this->render('mentions/index.html.twig', [
-            'controller_name' => 'MentionsController',
+            
         ]);
     }
 }

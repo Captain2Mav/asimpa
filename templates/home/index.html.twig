@@ -41,7 +41,7 @@
 								<li>Prévention des difficultés sociales</li>
 								<li>Soutien dans les démarches</li>
 							</ul>
-							<a href="#" class="btn btn-primary mt-3">En savoir plus</a>
+							<a href="{{path('app_business')}}" class="btn btn-primary mt-3">En savoir plus</a>
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 								<li>Orientation sociale</li>
 							</ul>
 
-							<a href="#" class="btn btn-primary">En savoir plus</a>
+							<a href="{{path('app_associations')}}" class="btn btn-primary">En savoir plus</a>
 						
 					           
 									</div>
@@ -76,7 +76,7 @@
 								<li>Analyse des situations</li>
 							</ul>
 
-							<a href="#" class="btn btn-primary">En savoir plus</a>
+							<a href="{{path('app_organisme')}}" class="btn btn-primary">En savoir plus</a>
 						
 					           
 									</div>
@@ -94,7 +94,7 @@
 								<li>Accés aux droits</li>
 							</ul>
 
-							<a href="#" class="btn btn-primary">En savoir plus</a>
+							<a href="{{path('app_particulier')}}" class="btn btn-primary">En savoir plus</a>
 						
 					           
 									</div>
@@ -217,30 +217,31 @@
                    
                         </section>
 
-                        <section>
-                 <div class="container-lg">
+                        <footer class="bg-light py-5 mt-5">
+                        <div class="container">
+                        <div class="row">
 
-                        <div class="row g-4">
-                              <div class="col-md-6">
-                              <ul class="list-unstyled">
-                              <li>Accueil</li>
-                              <li>Prestations</li>
-                              <li>Forum</li>
-                              <li>Contact</li>
-                              <ul>
-                              </div>
+            
+                    <div class="col-md-6 text-start">
+                <ul class="list-unstyled">
+                <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li><a href="#">Prestations</a></li>
+                <li><a href="{{ path('app_category') }}">Forum</a></li>
+                <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                </ul>
+            </div>
 
-                              <div class="col-md-6">
-                              <ul class="list-unstyled">
-                              <div class="text-center mt-4">
-                              <li>Mentions légales</li>
-                              <li>Politique de confidentialité</li>
-                              </ul>
-                        </div>
-                        </div>
+            <!-- DROITE -->
+            <div class="col-md-6 text-md-end mt-5">
+                <ul class="list-unstyled">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+            </div>
 
-                        
-                        </div>
-                        </section>
+            </div>
 
-					{% endblock %}
+        </div>
+        </footer>     
+                       
+{% endblock %}

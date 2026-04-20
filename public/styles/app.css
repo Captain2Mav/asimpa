@@ -222,3 +222,74 @@ navbar {
 
 } 
 
+.col-md-3 {
+  display: flex;  
+
+}
+
+.page-why section {
+    padding: 70px 0;
+}
+
+
+.page-why h2 {
+    color: #2f6fed;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.page-why h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #2f6fed;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.page-why .card-why {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.page-why .card-why:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(47,111,237,0.15);
+}
+
+
+.page-why .mini-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.page-why .mini-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(47,111,237,0.12);
+}
+
+
+.page-why .card-why h5,
+.page-why .card-why h6,
+.page-why .mini-card h5,
+.page-why .mini-card h6 {
+    color: #2f6fed;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* FOND ALTERNÉ */
+.page-why section:nth-child(even) {
+    background: #f8f9ff;
+}

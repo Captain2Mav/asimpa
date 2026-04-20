@@ -15,7 +15,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}ASIMPA{% endblock %}</title>
     </head>
-    <body class="d-flex flex-column min-vh-100">
+    <body class="d-flex flex-column min-vh-100  {% block body_class %}{% endblock %}">
     {% include 'partials/_navbar.html.twig' %}
 
    {% for message in app.flashes('success') %}

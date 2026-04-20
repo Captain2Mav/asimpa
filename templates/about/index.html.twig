@@ -1,65 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Qui suis-je ?{% endblock %}
+{% block title %}Qui suis-je{% endblock %}
 
 {% block body %}
 
-<div class="container mt-5">
 
-    
-    <h1 class="text-center mb-4">Qui suis-je ?</h1>
+<section class="hero text-center">
+    <div class="container">
+        <h1>ASIMPA</h1>
+        <p>Consultante sociale indépendante</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg mt-3">Prendre rendez-vous</a>
+    </div>
+</section>
 
-   
-    <div class="text-center mb-5">
-        <h2>MINDOULI PEGUY</h2>
-        <p class="lead">
-            Consultante sociale indépendante, spécialisée dans l'accompagnement
-            des personnes en difficulté.
+<section class="about container text-center">
+    <h2>Un accompagnement humain et personnalisé</h2>
+    <p class="lead">
+        J'accompagne depuis plus de 16 ans des personnes dans leur parcours de vie,
+        avec une approche basée sur l'écoute, la compréhension et l'adaptation.
+    </p>
+
+    <div class="row mt-5 g-4">
+
+        <div class="col-md-4">
+            <div class="card-custom">
+                <div class="icon">💼</div>
+                <h4>Expérience</h4>
+                <p>+ 16 ans dans le social et le milieu hospitalier</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card-custom">
+                <div class="icon">👥</div>
+                <h4>Public</h4>
+                <p>Handicap, personnes âgées, familles, demandeurs d'asile</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card-custom">
+                <div class="icon">🧠</div>
+                <h4>Compétences</h4>
+                <p>Accompagnement, stress, prévention, fin de vie</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="highlight">
+    <div class="container text-center">
+        <h2>Mon atout</h2>
+        <p>
+            Praticienne en sophrologie, j'apporte une approche globale
+            pour un mieux-être durable et personnalisé.
         </p>
     </div>
-
-   
-    <section class="mb-5">
-        <h3>Mon parcours</h3>
-        <p>
-            Diplômée d'État, j'accompagne depuis plus de 16 ans des personnes
-            dans leur parcours de vie. Mon expérience en milieu hospitalier
-            et social m’a permis de développer une approche humaine et adaptée.
-        </p>
-    </section>
-
-    <!-- Public -->
-    <section class="mb-5">
-        <h3>Quel type de public ai-je pris en charge</h3>
-        <ul>
-            <li>Enfants et adultes en situation de handicap</li>
-            <li>Personnes âgées en perte d’autonomie</li>
-            <li>Familles en difficulté</li>
-            <li>Personnes en demande d’asile</li>
-            <li>Victimes de violences</li>
-        </ul>
-    </section>
-
-    <!-- Compétences -->
-    <section class="mb-5">
-        <h3>Mes compétences</h3>
-        <ul>
-            <li>Accompagnement social personnalisé</li>
-            <li>Gestion du stress</li>
-            <li>Prévention des risques psychosociaux</li>
-            <li>Accompagnement fin de vie</li>
-        </ul>
-    </section>
-
-    <!-- Différenciation -->
-    <section class="mb-5">
-        <h3>Mon atout</h3>
-        <p>
-            Je suis également praticienne en sophrologie, ce qui me permet
-            d’accompagner mes bénéficiaires vers un mieux-être global.
-        </p>
-    </section>
-
-</div>
+</section>
 
 {% endblock %} 

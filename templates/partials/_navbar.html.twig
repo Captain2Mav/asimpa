@@ -1,69 +1,69 @@
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">ASIMPA</a>
-   
-    <div class="collapse navbar-collapse" id="navbarNav">
-     <ul class="navbar-nav me-auto">
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
 
-    <!-- ACCUEIL -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">ASIMPA</a>
+
+    <!-- BURGER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- CONTENU -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <ul class="navbar-nav mx-auto">
+
+        <!-- ACCUEIL -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             Accueil
-        </a>
-        <ul class="dropdown-menu">
+          </a>
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ path('app_home') }}">Accueil</a></li>
-            <li><a class="dropdown-item" href="{{path('app_about')}}">Qui suis-je ?</a></li>
-            <li><a class="dropdown-item" href="{{path('app_why')}}">Pourquoi faire appel ?</a></li>
-        </ul>
-    </li>
+            <li><a class="dropdown-item" href="{{ path('app_about') }}">Qui suis-je ?</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_why') }}">Pourquoi faire appel ?</a></li>
+          </ul>
+        </li>
 
-    <!-- PRESTATIONS -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+        <!-- PRESTATIONS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             Prestations
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{path('app_business') }}">Entreprises</a></li>
-            <li><a class="dropdown-item" href="{{path('app_organisme') }}">Organismes publics/privés</a></li>
-            <li><a class="dropdown-item" href="{{path('app_associations') }}">Associations</a></li>
-            <li><a class="dropdown-item" href="{{path('app_particulier') }}">Particuliers</a></li>
-        </ul>
-    </li>
-
-    <!-- TARIFS -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_tarifs') }}">Tarifs</a>
-    </li>
-
-    <!-- FORUM -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_category') }}">Forum</a>
-    </li>
-
-    <!-- CONTACT -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
-    </li>
-
-</ul> 
-
-
-      <ul class"navbar-nav">
-       {% if app.user %} 
-         <li class="nav-item">
-          <a class="nav-link" href="{{path('app_logout') }}">Déconnexion</a>
-          </li>
-       {% else %}
-          <li class="nav-item">
-          <a class="nav-link" href="#">Connexion</a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ path('app_business') }}">Entreprises</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_organisme') }}">Organismes</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_associations') }}">Associations</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_particulier') }}">Particuliers</a></li>
+          </ul>
         </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Inscription</a>
+
+        <!-- TARIFS -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_tarifs') }}">Tarifs</a>
         </li>
-       {% endif %}
+
+        <!-- FORUM -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_category') }}">Forum</a>
+        </li>
+
+        <!-- CONTACT -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+        </li>
+
       </ul>
-         <a href="#" class="btn btn-primary ms-3">Prendre rendez-vous</a>
+
+      <!-- DROITE -->
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="nav-link small">Connexion</a>
+        <a href="#" class="nav-link small">Inscription</a>
+        <a href="#" class="btn btn-primary btn-sm">Prendre rendez-vous</a>
+      </div>
+
     </div>
   </div>
-</nav>
+</nav> 

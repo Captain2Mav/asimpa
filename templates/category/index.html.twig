@@ -1,27 +1,60 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
 {% block title %}Forum{% endblock %}
+
 {% block body %}
-<h1>Forum d'échange</h1>
-<p>Un espace pour vos questions et partager vos expériences</p>
 
-<div class="row justify-content-center">
-{% for category in categories %}
-<div class="col-md-6 mb-4">
-<div class="card">
-<div class="card-body text-center">
-<h2>{{category.name}}</h2>
-<p>Maintien de l'emploi, difficultés de l'emploi</p>
+<div class="container mt-5">
 
-<a href="{{ path ('app_category_show', 
-{'id': category.id})  }}" class="btn btn-primary">
-Voir les discussions
- 
-</a>
-</div>
-</div>
-</div>
+    <!-- HEADER -->
+    <h1 class="mb-2">Forum d'échange</h1>
+    <p class="text-muted mb-4">
+        Un espace pour poser vos questions et partager vos expériences
+    </p>
 
-{% endfor %}
+    <!-- CATEGORIES -->
+    {% for category in categories %}
+
+    <div class="mb-5 p-3 bg-white rounded shadow-sm">
+
+        <!-- TITRE -->
+        <h4 class="fw-bold text-dark">{{ category.name }}</h4>
+
+        <!-- DESCRIPTION -->
+        <p class="text-muted small">{{ category.description }}</p>
+
+        <!-- TABLE FORUM -->
+        <div class="border rounded">
+
+            {% for post in category.posts %}
+
+                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom forum-row">
+
+                    <!-- TITRE -->
+                    <a href="{{ path('app_post_show', {'id': post.id}) }}"
+                       class="text-decoration-none text-dark fw-semibold text-primary">
+                        {{ post.title }}
+                    </a>
+
+                    <!-- DATE -->
+                    <small class="text-muted">
+                        {{ post.createdAt|date('d/m/Y') }}
+                    </small>
+
+                </div>
+
+            {% else %}
+
+                <div class="px-3 py-2 text-muted">
+                    Aucun sujet
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endfor %} 
 
 {% endblock %}

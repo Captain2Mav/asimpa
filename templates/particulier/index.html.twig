@@ -4,68 +4,103 @@
 
 {% block body %}
 
+<div class="particuliers-page">
 
-<section class="py-5 text-white" style="background-color:#2bb3a3;">
-    <div class="container text-center">
+<!-- HERO -->
+<section class="hero-section text-white text-center">
+    <div class="container">
+        <h1 class="fw-bold mb-3">Un accompagnement social personnalisé</h1>
+        <p class="mb-4">Des solutions adaptées à votre situation personnelle</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg">Prendre rendez-vous</a>
+    </div>
+</section>
 
-        <h2 class="mb-5">Mes missions</h2>
+<!-- MISSIONS -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Mes missions</h2>
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 align-items-center">
 
-            <div class="col-md-8">
+            <!-- TEXTE -->
+            <div class="col-md-6 fade-in">
                 <p>
-                    Je vous accompagne dans vos démarches administratives afin de vous aider à accéder à vos droits et à trouver des solutions adaptées à votre situation.
+                    Je vous accompagne dans vos démarches administratives afin de vous aider à accéder à vos droits
+                    et à trouver des solutions adaptées à votre situation.
                 </p>
 
-                <ul class="list-unstyled mb-4">
-                    <li>• Aides sociales (CAF, CPAM, MDPH…)</li>
-                    <li>• Déclarations et dossiers administratifs</li>
-                    <li>• Retraite et démarches liées à vos droits</li>
+                <ul class="custom-list">
+                    <li>✔ Aides sociales (CAF, CPAM, MDPH)</li>
+                    <li>✔ Dossiers administratifs</li>
+                    <li>✔ Retraite et droits</li>
                 </ul>
             </div>
 
-            <div class="col-md-5">
-                <div class="p-4 bg-white text-dark rounded shadow h-100">
-                    <h5>Protéger vos proches</h5>
-                    <ul>
-                        <li>Mise sous protection (curatelle, tutelle)</li>
-                        <li>Soutien aux aidants</li>
-                    </ul>
+            <!-- IMAGE -->
+            <div class="col-md-6 fade-in">
+                <img src="{{ asset('images/particuliers.jpg') }}"
+                     alt="Accompagnement social"
+                     class="img-fluid rounded shadow">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- DOMAINES -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-5">Domaines d'accompagnement</h2>
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <h5>Difficultes personnelles</h5>
+                    <p>Separation, conflits familiaux, situations complexes</p>
                 </div>
             </div>
 
-            <div class="col-md-5">
-                <div class="p-4 bg-white text-dark rounded shadow h-100">
-                    <h5>Difficultés personnelles</h5>
-                    <ul>
-                        <li>Séparation, divorce</li>
-                        <li>Problèmes familiaux ou éducatifs</li>
-                    </ul>
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="icon">
+                        <i class="bi bi-cash"></i>
+                    </div>
+                    <h5>Budget et logement</h5>
+                    <p>Dettes, aides financieres, acces au logement</p>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="p-4 bg-white text-dark rounded shadow">
-                    <h5>Budget & logement</h5>
-                    <ul>
-                        <li>Gestion du budget et prévention des dettes</li>
-                        <li>Surendettement et solutions financières</li>
-                        <li>Aide au logement et prévention des expulsions</li>
-                    </ul>
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="icon">
+                        <i class="bi bi-shield"></i>
+                    </div>
+                    <h5>Protection</h5>
+                    <p>Tutelle, curatelle, accompagnement juridique</p>
                 </div>
             </div>
 
         </div>
-
-        <div class="mt-5">
-            <h4>Besoin d’aide ?</h4>
-            <p>Je suis là pour vous accompagner</p>
-
-            <a href="{{ path('app_contact') }}" class="btn btn-light px-4 py-2">
-                Prendre rendez-vous
-            </a>
-        </div>
-
     </div>
 </section> 
-{% endblock %}
+
+
+<!-- CTA -->
+<section class="cta-section text-center">
+    <div class="container">
+        <h2>Besoin d'aide ?</h2>
+        <p>Je suis là pour vous accompagner</p>
+        <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg">Prendre rendez-vous</a>
+    </div>
+</section>
+
+</div>
+
+{% endblock %} 

@@ -1,187 +1,95 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pourquoi faire appel{% endblock %}
+{% block title %}Pourquoi faire appel ?{% endblock %}
 
-{% block body_class %}page-why{% endblock %}
 {% block body %}
+<div class="why-page">
 
-<!-- HERO -->
-<section class="py-5 bg-light">
-    <div class="container">
-
-        <h2 class="text-center mb-5 fw-bold">
-            Des situations difficiles à gérer seul
-        </h2>
-
-        <div class="row justify-content-center g-4">
-
-            <!-- PROBLÈMES -->
-            <div class="col-md-5">
-                <div class="p-4 shadow rounded bg-white h-100 text-center card-why">
-
-                    <h5 class="mb-4">Problèmes</h5>
-
-                    <ul class="list-unstyled text-center">
-                        <li class="mb-2">• Difficulté à trouver les bons interlocuteurs</li>
-                        <li class="mb-2">• Démarches longues et complexes</li>
-                        <li class="mb-2">• Manque d'informations</li>
-                        <li>• Multiplication des services</li>
-                    </ul>
-
-                </div>
-            </div>
-
-            <!-- RESSENTI -->
-            <div class="col-md-5">
-                <div class="p-4 shadow rounded bg-white h-100 text-center card-why">
-
-                    <h5 class="mb-4">Ressenti</h5>
-
-                    <ul class="list-unstyled text-center">
-                        <li class="mb-2">• Perte de repères</li>
-                        <li class="mb-2">• Fatigue administrative</li>
-                        <li class="mb-2">• Peur du jugement</li>
-                        <li>• Abandon des démarches</li>
-                    </ul>
-
-                </div>
-            </div>
-
+    <section class="why-hero">
+        <div class="container">
+            <span class="why-badge">Pourquoi faire appel à ASIMPA ?</span>
+            <h1>Des situations difficiles à gérer seul</h1>
+            <p class="why-intro">
+                Quand les démarches deviennent lourdes, floues ou épuisantes,
+                un accompagnement clair et humain permet de retrouver des repères.
+            </p>
         </div>
+    </section>
 
-    </div>
-</section> 
+    <section class="why-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="why-card fade-in">
+                        <h2>Problèmes</h2>
+                        <ul class="why-list">
+                            <li>Difficulté à trouver les bons interlocuteurs</li>
+                            <li>Démarches longues et complexes</li>
+                            <li>Manque d’informations</li>
+                            <li>Multiplication des services</li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- ATTENTES -->
-<section class="py-5 bg-light">
-    <div class="container text-center">
-
-        <h2 class="mb-5 fw-bold">Ce que vous recherchez</h2>
-
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded mini-card">
-                    <h5> Écoute</h5>
+                <div class="col-md-6">
+                    <div class="why-card fade-in delay-1">
+                        <h2>Ressenti</h2>
+                        <ul class="why-list">
+                            <li>Perte de repères</li>
+                            <li>Fatigue administrative</li>
+                            <li>Peur du jugement</li>
+                            <li>Abandon des démarches</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded mini-card">
-                    <h5> Rapidité</h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded mini-card">
-                    <h5> Clarté</h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded mini-card">
-                    <h5> Suivi personnalisé</h5>
-                </div>
-            </div>
-
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- SOLUTION -->
-<section class="py-5">
-    <div class="container text-center">
-
-        <h2 class="mb-5 fw-bold">Une solution adaptée</h2>
-
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded h-100 text-center card-why">
-                    
-                    <h6>Un interlocuteur unique</h6>
-                </div>
+    <section class="why-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Ce que vous recherchez</h2>
+            <div class="pill-grid fade-in delay-1">
+                <div class="why-pill">Écoute</div>
+                <div class="why-pill">Rapidité</div>
+                <div class="why-pill">Clarté</div>
+                <div class="why-pill">Suivi personnalisé</div>
             </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded h-100 card-why">
-                   
-                    <h6>Accompagnement personnalisé</h6>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded h-100 card-why">
-                    
-                    <h6>Démarches simplifiées</h6>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-4 bg-white shadow-sm rounded h-100 card-why">
-                    
-                    <h6>Suivi structuré</h6>
-                </div>
-            </div>
-
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- BÉNÉFICES -->
-<section class="py-5 bg-light">
-    <div class="container text-center">
-
-        <h2 class="mb-5 fw-bold">Ce que cela vous apporte</h2>
-
-        <div class="row g-4 justify-content-center">
-
-            <div class="col-md-3">
-                <div class="p-3">
-                    <h5> Gain de temps</h5>
+    <section class="why-section">
+        <div class="container text-center">
+            <h2 class="section-title fade-in">Une solution adaptée</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-3 col-sm-6">
+                    <div class="mini-card fade-in">
+                        <div class="mini-icon">👤</div>
+                        <p>Un interlocuteur unique</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="mini-card fade-in delay-1">
+                        <div class="mini-icon">🤝</div>
+                        <p>Accompagnement personnalisé</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="mini-card fade-in delay-2">
+                        <div class="mini-icon">📄</div>
+                        <p>Démarches simplifiées</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="mini-card fade-in delay-3">
+                        <div class="mini-icon">📌</div>
+                        <p>Suivi structuré</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="p-3">
-                    <h5> Moins de stress</h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-3">
-                    <h5> Meilleure compréhension</h5>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="p-3">
-                    <h5> Accompagnement humain</h5>
-                </div>
-            </div>
-
         </div>
+    </section>
 
-    </div>
-</section>
+</div> 
 
-<!-- CTA -->
-<section class="py-5 text-center bg-dark text-white">
-    <div class="container">
-
-        <h3 class="mb-3">Ne restez plus seul face aux démarches</h3>
-
-        <p class="mb-4">
-            Un accompagnement adapté peut faire toute la différence.
-        </p>
-
-        <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg">
-            Prendre contact
-        </a>
-
-    </div>
-</section>
-
-{% endblock %}
+{% endblock %} 

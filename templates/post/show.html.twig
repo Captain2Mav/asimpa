@@ -1,47 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block body %}
+<div class="forum-page">
+    <div class="container py-5">
+        <article class="forum-post-card">
+            <div class="forum-post-header">
+                <span class="forum-badge">Sujet</span>
+                <h1>{{ post.title }}</h1>
+            </div>
 
-<h1>{{post.title}}</h1>
-<p>{{post.content}}</p>
+            <div class="forum-post-content">
+                <p>{{ post.content }}</p>
+            </div>
 
-  {% if is_granted('(ROLE_ADMIN)') %}
-  <a href="{{path('app_post_edit', {'id': post.id}) }}">
-  Modifier
-  </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="forum-admin-actions">
+                    <a href="{{ path('app_post_edit', {'id': post.id}) }}" class="btn btn-outline-primary">Modifier</a>
 
-    <form action="{{ path('app_post_delete', {'id': post.id}) }}" method="POST">
-        <input type="hidden" name="_token" value="{{ csrf_token('delete-post-' ~ post.id) }}">
+                    <form action="{{ path('app_post_delete', {'id': post.id}) }}" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete-post-' ~ post.id) }}">
+                        <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                    </form>
+                </div>
+            {% endif %}
+        </article>
 
-         <button type="submit">Supprimer</button>
-    </form>
-    {% endif %}
+        <section class="forum-comments-card mt-4">
+            <h2>Commentaires</h2>
 
-    <h4 class="mt-5">Commentaires</h4>
+            {% for comment in post.comments %}
+                <div class="forum-comment">
+                    <p>{{ comment.content }}</p>
+                </div>
+            {% else %}
+                <div class="forum-empty-state">Aucun commentaire pour le moment.</div>
+            {% endfor %}
+        </section>
 
-    {% for comment in post.comments %}
-    <div class="border p-2 mb-2">
-    <p>{{comment.content}}</p>
+        <section class="forum-form-card mt-4">
+            <h2>Ajouter un commentaire</h2>
+            {{ form_start(form) }}
+                <div class="mb-3">
+                    {{ form_label(form.content) }}
+                    {{ form_widget(form.content, {'attr': {'class': 'form-control forum-textarea', 'rows': 5}}) }}
+                </div>
+                <button class="btn forum-btn-primary">Commenter</button>
+            {{ form_end(form) }}
+        </section>
     </div>
-    {% else %}
-    <p>Aucun commentaire</p>
-    {% endfor %}
-
-    <div class="mt-4">
-   <h4>Ajouter un commentaire</h4>
-
-    {{ form_start(form) }}
-    <div class "mb-3">
-    {{form_label(form.content)}}
-    {{form_widget(form.content, {'attr': {'class': 'form-control'}})}}
-    </div>
-    <button class="btn btn-sucess">Commenter</button>
-    </div>
-    {{form_end(form)}}
-
-
-{% endblock %}
-
-
+</div>
+{% endblock %} 

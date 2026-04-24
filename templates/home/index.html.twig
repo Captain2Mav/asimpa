@@ -1,247 +1,192 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-	<section class="d-flex align-items-center justify-content-center text-center bg-light" style="min-height: 90vh;">
-		<div class="container">
+<div class="home">
 
-			<h1 class="display-2 fw-bold mb-4">
-				Un accompagnement social
-				<span class="text-success">qui vous redonne le pouvoir d’agir</span>
-			</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Un accompagnement social qui vous redonne le pouvoir d’agir</h1>
+    <p>
+      Un service social indépendant, humain et personnalisé,
+      pour vous accompagner avec écoute, clarté et confiance.
+    </p>
 
-			<p class="fs-4 mt-4 mb-4" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
-				Un service social indépendant, humain et personnalisé,
-				            pour vous accompagner avec écoute, clarté et confiance.
-			</p>
+    <div class="btn-center">
+      <a href="{{ path('app_contact') }}" class="btn btn-main">
+        Prendre rendez-vous
+      </a>
+    </div>
+  </div>
+</section>
 
-			<a href="#" class="btn btn-success btn-lg px-5 py-3 shadow">
-				Prendre rendez-vous
-			</a>
+<!-- PRESTATIONS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Nos prestations</h2>
 
-		</div>
-	</section>
+    <div class="row g-4">
 
-	<section class="py-5">
-		<div class="container">
-			<h2 class="text-center mb-3">Nos Prestations</h2>
+      <!-- ENTREPRISES -->
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h5>Entreprises</h5>
+          <p>Accompagnement social des salariés</p>
 
-			<p class="text-center">Nous accompagnons différents publics dans leurs démarches sociales et économiques
-			</p>
+          <ul class="text-start">
+            <li>Prévention des difficultés sociales</li>
+            <li>Soutien dans les démarches</li>
+          </ul>
 
-			<div class="row g-4">
-
-				<div class="col-md-6">
-					<div class="card h-100">
-						<div class="card-body text-center">
-							<h5 class="card-title">Entreprises</h5>
-							<p>Accompagnement social des salariés</p>
-
-							<ul class="text-start mx-auto" style="width: fit-content;">
-								<li>Prévention des difficultés sociales</li>
-								<li>Soutien dans les démarches</li>
-							</ul>
-							<a href="{{path('app_business')}}" class="btn btn-primary mt-3">En savoir plus</a>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-md-6">
-					<div class="card h-100">
-						<div class="card-body text-center">
-							<h5 class="card-title">Associations</h5>
-							<p>Soutien aux structures associatives</p>
-
-							<ul class="text-start mx-auto" style="width: fit-content;">
-								<li>Accompagnement administratif</li>
-								<li>Orientation sociale</li>
-							</ul>
-
-							<a href="{{path('app_associations')}}" class="btn btn-primary">En savoir plus</a>
-						
-					           
-									</div>
-								</div>
-							</div>
-
-				<div class="col-md-6">
-					<div class="card h-100">
-						<div class="card-body text-center">
-							<h5 class="card-title">Organismes publics/privés</h5>
-							<p>Interventions sociales ponctuelles</p>
-
-							<ul class="text-start mx-auto" style="width: fit-content;">
-								<li>Appui aux dispositifs existants</li>
-								<li>Analyse des situations</li>
-							</ul>
-
-							<a href="{{path('app_organisme')}}" class="btn btn-primary">En savoir plus</a>
-						
-					           
-									</div>
-								</div>
-							</div>
-
-				<div class="col-md-6">
-					<div class="card h-100">
-						<div class="card-body text-center">
-							<h5 class="card-title"> Particuliers</h5>
-							<p>Accompagnement social personnalisé</p>
-
-							<ul class="text-start mx-auto" style="width: fit-content;">
-								<li>Aide aux démarches</li>
-								<li>Accés aux droits</li>
-							</ul>
-
-							<a href="{{path('app_particulier')}}" class="btn btn-primary">En savoir plus</a>
-						
-					           
-									</div>
-								</div>
-							</div>
-
-
-						</section>
-
-                        <section class = "my-5">
-                        <div class"container">
-
-                        <h2 class="text-center mb-4">Comment ca se passe</h2>
-
-                        <div class="row justify-content-center">
-                        <div class="col-md-8">
-
-                        <div class="card">
-                        <div class="card-body">
-                         <ol>
-                         <li>
-                         <strong>Prise de contact</strong> <br>
-                         Vous nous contacter via le formulaire. 
-                         </li>
-
-                         <li>
-                         <strong>Analyse de votre situation</strong><br>
-                         Un échange confidentiel permet d'identifier vos besoins.
-                         </li>
-
-                         <li>
-                         <strong>Accompagnement personnalisé</strong><br>
-                         Mise en place d'un suivi adapté à votre situation.
-                         </li>
-                         <ol>
-                        
-                        </div>
-                        </div>
-                        
-                        </div>    
-                        </div>
-                        
-                        </div>
-                        </section>
-
-                        <section class="my-5">
-                        <div class="container">
-
-                        <h2 class="text-center mb-4">Avis clients</h2>
-
-                        <div class="row g-4">
-
-                        <div class="col-md-6">
-                        <div class="card h-100">
-                        <div class="card-body text-center">
-
-                        <div class="mb-2">
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                      
-                        </div>
-
-                        <p>Un accompagnement à l'écoute et humain</p>
-                        <strong>Mme Zadi</strong>
-                        
-                        </div>
-                        </div>
-                        </div>
-
-                        <div class="col-md-6">
-                        <div class="card h-100">
-                        <div class="card-body text-center">
-
-                        <div class="mb-2">
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        
-                        </div>
-
-                        <p>Professionnelle, disponible et rassurante</p>
-                        <strong>Mme Kero</strong>
-                         
-                        
-                         
-                         </div>
-                         
-                         </div>
-                         </div>
-                         <div class="text-center mt-4">
-                        <a href="#" class="btn btn-primary mt-3">Voir tous les avis</a>
-                        </div>
-                        
-                        
-                        </div>
-                        </div>
-                        </div>
-                        
-                        </div>
-
-
-                        </div>
-                        </section>
-
-                        <section class="container py-5">
-                        <h2 class="text-center">Besoin d'un accompagnement personnalisé ?</h2>
-                        <br>
-                        <div class="text-center">
-                        <p>Prenez contact dès aujourd'hui pour échanger en toute confidentialité</p>
-                        
-                        </div>
-                         <div class="text-center mt-4">
-                         <a href="#" class="btn btn-primary mt-3">Prendre rendez-vous</a>
-                         </div>
-                        </div>
-                   
-                        </section>
-
-                        <footer class="bg-light py-5 mt-5">
-                        <div class="container">
-                        <div class="row">
-
-            
-                    <div class="col-md-6 text-start">
-                <ul class="list-unstyled">
-                <li><a href="{{ path('app_home') }}">Accueil</a></li>
-                <li><a href="#">Prestations</a></li>
-                <li><a href="{{ path('app_category') }}">Forum</a></li>
-                <li><a href="{{ path('app_contact') }}">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- DROITE -->
-            <div class="col-md-6 text-md-end mt-5">
-                <ul class="list-unstyled">
-                <li><a href="{{path('app_mentions')}}">Mentions légales</a></li>
-                <li><a href="{{path('app_privacy')}}">Politique de confidentialité</a></li>
-                </ul>
-            </div>
-
-            </div>
-
+          <div class="btn-center">
+            <a href="{{ path('app_business') }}" class="btn btn-main">
+              En savoir plus
+            </a>
+          </div>
         </div>
-        </footer>     
-                       
-{% endblock %}
+      </div>
+
+      <!-- ASSOCIATIONS -->
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h5>Associations</h5>
+          <p>Soutien aux structures associatives</p>
+
+          <ul class="text-start">
+            <li>Accompagnement administratif</li>
+            <li>Orientation sociale</li>
+          </ul>
+
+          <div class="btn-center">
+            <a href="{{ path('app_associations') }}" class="btn btn-main">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORGANISMES -->
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h5>Organismes publics/privés</h5>
+          <p>Interventions sociales ponctuelles</p>
+
+          <ul class="text-start">
+            <li>Appui aux dispositifs</li>
+            <li>Analyse des situations</li>
+          </ul>
+
+          <div class="btn-center">
+            <a href="{{ path('app_organisme') }}" class="btn btn-main">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTICULIERS -->
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h5>Particuliers</h5>
+          <p>Accompagnement social personnalisé</p>
+
+          <ul class="text-start">
+            <li>Aide aux démarches</li>
+            <li>Accès aux droits</li>
+          </ul>
+
+          <div class="btn-center">
+            <a href="{{ path('app_particulier') }}" class="btn btn-main">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Avis clients</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="card-custom">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <p>Un accompagnement à l’écoute et humain</p>
+          <strong>Mme Zadi</strong>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-custom">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <p>Professionnelle et rassurante</p>
+          <strong>Mme Kero</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-center">
+      <a href="{{ path('app_category') }}" class="btn btn-main">
+        Voir tous les avis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section text-center">
+  <div class="container">
+    <h2>Besoin d’un accompagnement personnalisé ?</h2>
+    <p class="text-muted">
+      Prenez contact dès aujourd’hui pour échanger en toute confidentialité
+    </p>
+
+    <div class="btn-center">
+      <a href="{{ path('app_contact') }}" class="btn btn-main">
+        Prendre rendez-vous
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer bg-light">
+
+  <div>
+    <a href="{{ path('app_home') }}">Accueil</a>
+    <a href="{{ path('app_category') }}">Forum</a>
+    <a href="{{ path('app_contact') }}">Contact</a>
+  </div>
+
+  <div class="mt-2">
+    <a href="{{ path('app_mentions') }}">Mentions légales</a>
+    <a href="{{ path('app_privacy') }}">Politique de confidentialité</a>
+  </div>
+
+</footer>
+
+</div>
+{% endblock %} 

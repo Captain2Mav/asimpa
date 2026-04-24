@@ -1,43 +1,118 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Contact{% endblock %}
+
 {% block body %}
+<div class="contact-page">
 
-<div class="container mt-5">
-    <div class="col-md-6">
-
-        <h1 class="mb-4">Formulaire de contact</h1>
-
-        {{ form_start(form) }}
-
-        <div class="mb-3">
-            {{ form_label(form.firstName) }}
-            {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+    <section class="contact-hero">
+        <div class="container text-center">
+            <span class="contact-badge">Contact</span>
+            <h1>Formulaire de contact</h1>
+            <p class="contact-intro">
+                Une question, un besoin d’accompagnement ou une demande de rendez-vous ?
+                Écrivez-moi et je vous répondrai dès que possible.
+            </p>
         </div>
-        <div class="mb-3">
-            {{ form_label(form.lastName) }}
-            {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+
+                <div class="col-lg-7">
+                    <div class="contact-card fade-in">
+                        <h2>Écrivez-moi</h2>
+
+                        {{ form_start(form) }}
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    {{ form_label(form.firstName) }}
+                                    {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    {{ form_label(form.lastName) }}
+                                    {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    {{ form_label(form.subject) }}
+                                    {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    {{ form_label(form.email) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    {{ form_label(form.message) }}
+                                    {{ form_widget(form.message, {'attr': {'class': 'form-control contact-textarea', 'rows': 6}}) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn contact-btn" type="submit">Envoyer</button>
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-side-card fade-in delay-1">
+                        <h2>Coordonnées</h2>
+                        <p class="contact-side-text">
+                            Vous pouvez me contacter pour toute demande d’information ou d’accompagnement.
+                        </p>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📍</span>
+                                <div>
+                                    <strong>Adresse</strong>
+                                    <p>59 rue Ponthieu, bureau 562, 75008 Paris</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📧</span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>contact@asimpa.fr</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">📞</span>
+                                <div>
+                                    <strong>Téléphone</strong>
+                                    <p>06 68 91 43 88</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2714822411085!2d2.3023070758737316!3d48.87210097133402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc16021f95b%3A0xa1f9ce6ff7aac028!2s59%20Rue%20de%20Ponthieu%2C%2075008%20Paris%20Cedex%208!5e0!3m2!1sfr!2sfr!4v1776976813144!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="mb-3">
-            {{ form_label(form.subject) }}
-            {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
-        </div>
-
-        <div class="mb-3">
-            {{ form_label(form.email) }}
-            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
-        </div>
-
-        <div class="mb-3">
-            {{ form_label(form.message) }}
-            {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': 5}}) }}
-        </div>
-
-        <button class="btn btn-primary">Envoyer</button>
-
-        {{ form_end(form) }}
-
-    </div>
 </div>
-
 {% endblock %} 

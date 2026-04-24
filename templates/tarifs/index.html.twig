@@ -1,40 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Les Tarifs{% endblock %}
 
 {% block body %}
-<section class="py-5" style="background:linear-gradient(135deg, #2bb3a3, #1f2937); color:white;">
-<div class="container">
-<h2 class="text-center mb-3">Les Tarifs</h2>
+<section class="tarifs-section tarifs-page">
+    <div class="container text-center">
+        <h2 class="mb-3 fade-in">Les Tarifs</h2>
+        <p class="tarifs-intro fade-in delay-1">
+            Une tarification claire, flexible et adaptée à vos besoins, pour un accompagnement personnalisé.
+        </p>
 
-<div class="row g-4">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 fade-in delay-1">
+                <div class="tarif-card text-start">
+                    <div class="tarif-icon">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                    <h3>Tarification flexible</h3>
+                    <p>Possibilité de paiement à l’heure ou au forfait selon votre situation.</p>
+                </div>
+            </div>
 
-    <div class="col-md-6">
-    <div class="card p-4 shadow-sm h-100 border-0 shadow" style="border-radius: 20px;">
+            <div class="col-md-6 fade-in delay-2">
+                <div class="tarif-card text-start">
+                    <div class="tarif-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3>Transparence</h3>
+                    <p>Les tarifs sont présentés de manière claire pour garantir un service de qualité et personnalisé.</p>
+                </div>
+            </div>
+        </div>
 
-    <h5 class="fw-bold mb-3">Tarification flexible</h5>
-    <p>
-    Possibilité de paiement à l'heure ou au forfait selon votre situation.
-    </p>
-</div>
-</div>
+        <div class="cta-tarifs fade-in delay-3">
+            <a href="{{path('app_contact')}}" class="btn">Demander un devis</a>
+        </div>
+    </div>
+</section> 
 
-    <div class="col-md-6">
-    <div class="card p-4 shadow-sm h-100 border-0 shadow" style="border-radius: 20px;">
-
-    <h5 class="fw-bold mb-3">Transparence</h5>
-    <p>
-     Les tarifs sont adaptés pour garantir un service de qualité et personnalisé.
-    </p>
-</div>
-
-</div>
-</div>
-</section>
-
-<div class="text-center mt-5">
-    <a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg px-4">
-        Demander un devis
-    </a>
-</div> 
 {% endblock %}

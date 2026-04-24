@@ -3,7 +3,13 @@
   <div class="container">
 
     <!-- LOGO -->
-    <a class="navbar-brand fw-bold" href="#">ASIMPA</a>
+  <a class="navbar-brand" href="{{ path('app_home') }}">
+    <img
+        src="{{ asset('images/logo-asimpa.png') }}"
+        alt="ASIMPA"
+        style="height:45px !important; width:auto !important; max-height:45px !important; object-fit:contain !important;"
+    >
+</a> 
 
     <!-- BURGER -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -59,8 +65,7 @@
 
       <!-- DROITE -->
       <div class="d-flex align-items-center gap-2">
-        <a href="#" class="nav-link small">Connexion</a>
-        <a href="#" class="nav-link small">Inscription</a>
+        <a href="{{path('app_login')}}" class="nav-link small">Se connecter</a>
         <a href="#" class="btn btn-primary btn-sm">Prendre rendez-vous</a>
       </div>
 

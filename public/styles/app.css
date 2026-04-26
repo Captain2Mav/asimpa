@@ -1561,11 +1561,133 @@ h2 {
     width: auto !important;
     max-height: 45px !important;
     max-width: 160px !important;
-    object-fit: contain !important;
-    display: block !important;
+    object-fit: contain ;
+    display: block 
 } 
+.reviews-page {
+    padding: 70px 20px 90px;
+    background: linear-gradient(135deg, #f7fbfe, #eef7fc);
+    min-height: 100vh;
+}
 
+.reviews-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+}
 
+.reviews-wrapper h1 {
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: #132238;
+    margin-bottom: 45px;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-bottom: 45px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+    border: 1px solid #edf2f6;
+}
+
+.review-stars {
+    color: #f2b705;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #5f6f7b;
+    margin-bottom: 18px;
+}
+
+.review-card strong {
+    color: #132238;
+    font-weight: 800;
+}
+
+.no-review {
+    text-align: center;
+    grid-column: 1 / -1;
+    color: #6c757d;
+}
+
+.review-form {
+    max-width: 700px;
+    margin: 55px auto 0;
+    background: white;
+    padding: 38px;
+    border-radius: 28px;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.08);
+    border: 1px solid #edf2f6;
+}
+
+.review-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #132238;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #132238;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #d9e5ec;
+    border-radius: 14px;
+    padding: 13px 15px;
+    background: #fbfdff;
+}
+
+.form-group textarea {
+    min-height: 130px;
+}
+
+.rating-group div[id$="_rating"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rating-group div[id$="_rating"] input {
+    margin-right: 5px;
+}
+
+.btn-main {
+    background: linear-gradient(135deg, #135d85, #1db5f0);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 13px 28px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-main:hover {
+    color: white;
+    transform: translateY(-2px);
+} 
 
 
 .home {

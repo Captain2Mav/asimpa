@@ -33,6 +33,11 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
+    public function __construct()
+    {
+    $this->createdAt = new \DateTimeImmutable();
+    } 
+
     public function getId(): ?int
     {
         return $this->id;

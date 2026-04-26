@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 <div class="login-page">
@@ -54,6 +54,12 @@
                                 required
                             >
                         </div>
+
+                             <div class="forgot-password">
+                                <a href="{{ path('app_forgot_password_request') }}">
+                                    Mot de passe oublié ?
+                                </a>
+                            </div> 
 
                         <input
                             type="hidden"

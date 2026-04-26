@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis clients{% endblock %}
+
+{% block body %}
+
+<section class="reviews-page">
+    <div class="reviews-wrapper">
+
+        <h1>Avis clients</h1>
+
+        <div class="reviews-list">
+            {% for review in reviews %}
+                <div class="review-card">
+                    <div class="review-stars">
+                        {% for i in 1..5 %}
+                            {% if i <= review.rating %}
+                                <i class="fa-solid fa-star"></i>
+                            {% else %}
+                                <i class="fa-regular fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <p>{{ review.message }}</p>
+                    <strong>{{ review.name }}</strong>
+                </div>
+            {% else %}
+                <p class="no-review">Aucun avis publié pour le moment.</p>
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <a href="#formAvis" class="btn btn-main">Laisser un avis</a>
+        </div>
+
+        <div id="formAvis" class="review-form">
+            <h2>Donner votre avis</h2>
+
+            {{ form_start(form) }}
+
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.message) }}
+                    {{ form_widget(form.message) }}
+                </div>
+
+                <div class="form-group rating-group">
+                    {{ form_label(form.rating) }}
+                    {{ form_widget(form.rating) }}
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-main">Envoyer mon avis</button>
+                </div>
+
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %} 

@@ -3,33 +3,73 @@
 {% block title %}Dashboard Admin{% endblock %}
 
 {% block body %}
+
 <div style="padding:40px; background:#f8fafc; min-height:100vh;">
 
-    <h1 style="margin-bottom:30px; font-weight:600;">⚙️ Dashboard Admin</h1>
+    <h1 style="margin-bottom:30px; font-weight:600;">
+        ⚙️ Dashboard Admin
+    </h1>
+
+    <p style="margin-bottom:30px; color:#64748b;">
+        Connecté en tant qu'administrateur
+    </p>
+
+
+    <div style="display:flex; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+        <div style="background:white; padding:20px; border-radius:12px; width:200px;">
+            <h3>Posts</h3>
+            <p style="font-size:24px; font-weight:bold;">
+                {{ postsCount }}
+            </p>
+        </div>
+
+        <div style="background:white; padding:20px; border-radius:12px; width:200px;">
+            <h3>Commentaires</h3>
+            <p style="font-size:24px; font-weight:bold;">
+                {{ commentsCount }}
+            </p>
+        </div>
+
+    </div>
 
     <div style="display:flex; gap:25px; flex-wrap:wrap;">
 
-        <!-- Carte Messages -->
-        <div style="background:white; padding:25px; border-radius:12px; width:260px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:0.2s;">
-           
+        <!-- Messages -->
+        <div style="background:white; padding:25px; border-radius:12px; width:260px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
             <h2 style="margin-bottom:10px;">📩 Messages</h2>
-            <p style="color:#64748b; font-size:14px;">Consulter les messages reçus</p>
+            <p style="color:#64748b;">Consulter les messages reçus</p>
 
             <a href="{{ path('app_admin_contact_index') }}"
                style="display:inline-block; margin-top:15px; padding:10px 16px; background:#2563eb; color:white; border-radius:6px; text-decoration:none;">
-               Accéder
+                Accéder
             </a>
         </div>
 
-        <!-- Carte Admin -->
+        <!-- Posts -->
         <div style="background:white; padding:25px; border-radius:12px; width:260px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-           
-            <h2 style="margin-bottom:10px;">📌 Administration</h2>
-            <p style="color:#64748b; font-size:14px;">Interface de gestion du site</p>
+            <h2 style="margin-bottom:10px;">📝 Posts</h2>
+            <p style="color:#64748b;">Gérer les posts du forum</p>
 
+            <a href="{{ path('app_admin_posts') }}"
+               style="display:inline-block; margin-top:15px; padding:10px 16px; background:#16a34a; color:white; border-radius:6px; text-decoration:none;">
+                Voir les posts
+            </a>
+        </div>
+
+        <!-- Commentaires -->
+        <div style="background:white; padding:25px; border-radius:12px; width:260px; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+            <h2 style="margin-bottom:10px;">💬 Commentaires</h2>
+            <p style="color:#64748b;">Gérer les commentaires</p>
+
+            <a href="#"
+               style="display:inline-block; margin-top:15px; padding:10px 16px; background:#f59e0b; color:white; border-radius:6px; text-decoration:none;">
+                Voir
+            </a>
         </div>
 
     </div>
 
 </div>
-{% endblock %} 
+
+{% endblock %}

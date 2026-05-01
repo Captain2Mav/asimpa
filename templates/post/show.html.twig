@@ -1,54 +1,108 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}Détail du post{% endblock %}
 
 {% block body %}
 <div class="forum-page">
     <div class="container py-5">
+
+      
+        <a href="{{ path('app_post') }}" class="btn btn-secondary mb-3">
+            ← Retour aux posts
+        </a>
+
+        <!-- POST -->
         <article class="forum-post-card">
-            <div class="forum-post-header">
-                <span class="forum-badge">Sujet</span>
-                <h1>{{ post.title }}</h1>
-            </div>
+
+            <h1>{{ post.title }}</h1>
+
+            <p class="text-muted">
+                Posté par {{ post.user.email }}
+                le {{ post.createdAt|date('d/m/Y H:i') }}
+            </p>
 
             <div class="forum-post-content">
                 <p>{{ post.content }}</p>
             </div>
 
-            {% if is_granted('ROLE_ADMIN') %}
-                <div class="forum-admin-actions">
-                    <a href="{{ path('app_post_edit', {'id': post.id}) }}" class="btn btn-outline-primary">Modifier</a>
+           
+            {% if app.user and (app.user == post.user or is_granted('ROLE_ADMIN')) %}
+                <div class="forum-admin-actions mt-3">
 
-                    <form action="{{ path('app_post_delete', {'id': post.id}) }}" method="POST">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete-post-' ~ post.id) }}">
-                        <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+                    <a href="{{ path('app_post_edit', {'id': post.id}) }}"
+                       class="btn btn-outline-primary">
+                        Modifier
+                    </a>
+
+                    <form action="{{ path('app_post_delete', {'id': post.id}) }}"
+                          method="POST"
+                          style="display:inline;"
+                          onsubmit="return confirm('Tu es sûr de vouloir supprimer ce post ?');">
+
+                        <input type="hidden" name="_token"
+                               value="{{ csrf_token('delete-post-' ~ post.id) }}">
+
+                        <button type="submit" class="btn btn-outline-danger">
+                            Supprimer
+                        </button>
                     </form>
+
                 </div>
             {% endif %}
+
         </article>
 
+      
         <section class="forum-comments-card mt-4">
             <h2>Commentaires</h2>
 
-            {% for comment in post.comments %}
-                <div class="forum-comment">
-                    <p>{{ comment.content }}</p>
-                </div>
-            {% else %}
-                <div class="forum-empty-state">Aucun commentaire pour le moment.</div>
-            {% endfor %}
+           {% for comment in post.comments %}
+    <div class="card mb-3 p-3">
+        <p>{{ comment.content }}</p>
+
+        <small class="text-muted">
+            Par {{ comment.user.email ?? 'Anonyme' }}
+            le {{ comment.createdAt|date('d/m/Y H:i') }}
+        </small>
+    </div>
+{% else %}
+    <p>Aucun commentaire pour le moment.</p>
+{% endfor %}
+
         </section>
 
+        
         <section class="forum-form-card mt-4">
             <h2>Ajouter un commentaire</h2>
-            {{ form_start(form) }}
-                <div class="mb-3">
-                    {{ form_label(form.content) }}
-                    {{ form_widget(form.content, {'attr': {'class': 'form-control forum-textarea', 'rows': 5}}) }}
-                </div>
-                <button class="btn forum-btn-primary">Commenter</button>
-            {{ form_end(form) }}
+
+            {% if app.user %}
+
+                {{ form_start(form) }}
+
+                    <div class="mb-3">
+                        {{ form_label(form.content) }}
+                        {{ form_widget(form.content, {
+                            'attr': {
+                                'class': 'form-control forum-textarea',
+                                'rows': 5
+                            }
+                        }) }}
+                    </div>
+
+                    <button class="btn btn-primary">
+                        Commenter
+                    </button>
+
+                {{ form_end(form) }}
+
+            {% else %}
+                <p class="text-muted">
+                    Connecte-toi pour commenter.
+                </p>
+            {% endif %}
+
         </section>
+
     </div>
 </div>
-{% endblock %} 
+{% endblock %}

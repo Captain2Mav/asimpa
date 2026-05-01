@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+   
+
+
+ {{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }} 
+
+
+<div class="login-page">
+    <section class="login-section">
+        <div class="container">
+            <div class="login-wrapper">
+                <div class="login-card">
+
+                    <div class="login-header">
+                        <span class="login-badge">Espace utilisateur</span>
+                        <h1>Inscription</h1>
+                        <p>Créez votre compte pour accéder à votre espace personnel.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 form-group-custom">
+                            <label>Prénom</label>
+                            {{ form_widget(registrationForm.firstName, {
+                                'attr': {'class': 'form-control'}
+                            }) }}
+                            {{ form_errors(registrationForm.firstName) }}
+                        </div>
+
+                        <div class="col-lg-6 form-group-custom">
+                            <label>Nom</label>
+                            {{ form_widget(registrationForm.lastName, {
+                                'attr': {'class': 'form-control'}
+                            }) }}
+                            {{ form_errors(registrationForm.lastName) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label>Email</label>
+                        {{ form_widget(registrationForm.email, {
+                            'attr': {'class': 'form-control'}
+                        }) }}
+                        {{ form_errors(registrationForm.email) }}
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label>Mot de passe</label>
+                        {{ form_widget(registrationForm.password.first, {
+                            'attr': {
+                                'class': 'form-control',
+                                'placeholder': 'Au moins 12 caractères'
+                            }
+                        }) }}
+                        <small>
+                            Au moins 12 caractères, une majuscule, une minuscule et un caractère spécial
+                        </small>
+                        {{ form_errors(registrationForm.password.first) }}
+                    </div>
+
+                    <div class="form-group-custom">
+                        <label>Confirmer le mot de passe</label>
+                        {{ form_widget(registrationForm.password.second, {
+                            'attr': {'class': 'form-control'}
+                        }) }}
+                        {{ form_errors(registrationForm.password.second) }}
+                    </div>
+
+                    <div class="login-options">
+                        {{ form_widget(registrationForm.agreeTerms) }}
+                        <label>
+                            Lire et accepter
+                            <a href="#">les conditions générales d’utilisation</a>
+                        </label>
+                        {{ form_errors(registrationForm.agreeTerms) }}
+                    </div>
+
+                    <button type="submit" class="btn login-btn">
+                        S’inscrire
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{{ form_end(registrationForm) }} 
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 
+
+
+

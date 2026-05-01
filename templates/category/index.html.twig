@@ -23,6 +23,14 @@
                         <h2>{{ category.name }}</h2>
                         <p>{{ category.description }}</p>
                     </div>
+
+                    {% if app.user %}
+         <a href="{{ path('app_post_new', {'category': category.id}) }}"
+         class="btn btn-primary mt-2">
+         + Créer un post
+         </a>
+           {% endif %}
+
                     <span class="forum-category-pill">
                         {{ category.posts|length }} sujet{% if category.posts|length > 1 %}s{% endif %}
                     </span>

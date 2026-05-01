@@ -1,15 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Posts{% endblock %}
+{% block title %}Créer un post{% endblock %}
 
 {% block body %}
-<h1>Créer un post<h1>
+<div class="container py-5">
 
-{{ form_start(form) }}
-{{ form_widget(form) }}
+    <h1 class="mb-4">Créer un post</h1>
+
+    {{ form_start(form) }}
+
+<div class="mb-3">
+    {{ form_label(form.title) }}
+    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.content) }}
+    {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+</div>
+
+<div class="mb-3">
+    {{ form_label(form.category) }}
+    {{ form_widget(form.category, {'attr': {'class': 'form-select'}}) }}
+</div>
 
 <button class="btn btn-primary">Publier</button>
 
 {{ form_end(form) }}
 
+
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_category') }}" class="btn btn-secondary mt-3">
+        ← Retour
+    </a>
+
+</div>
 {% endblock %}

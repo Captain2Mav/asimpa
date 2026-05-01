@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Commentaires{% endblock %}
+
+{% block body %}
+
+<div style="padding:40px;">
+
+    <h1> Gestion des commentaires</h1>
+
+    {% if comments is empty %}
+        <p>Aucun commentaire</p>
+    {% else %}
+        {% for comment in comments %}
+            <div style="background:#f1f5f9; padding:15px; margin-bottom:15px; border-radius:8px;">
+
+                <p><strong>{{ comment.user.email }}</strong></p>
+                <p>{{ comment.content }}</p>
+
+                <form method="post" action="{{ path('app_admin_comment_delete', {'id': comment.id}) }}">
+                    <button style="background:red; color:white; padding:5px 10px;">
+                        Supprimer
+                    </button>
+                </form>
+
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

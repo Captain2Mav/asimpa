@@ -74,13 +74,13 @@
                         {{ form_widget(registrationForm.agreeTerms) }}
                         <label>
                             Lire et accepter
-                            <a href="#">les conditions générales d’utilisation</a>
+                            <a href="{{path('app_visitor_terms_of_service')}}" target="_blank">les conditions générales d'utilisation</a>
                         </label>
                         {{ form_errors(registrationForm.agreeTerms) }}
                     </div>
 
                     <button type="submit" class="btn login-btn">
-                        S’inscrire
+                        S'inscrire
                     </button>
 
                 </div>

@@ -43,7 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     max: 255,
     maxMessage: "L'email doit contenir au maximum {{ limit }} caractères."
 )]
-#[Assert\Email(message:"L'email{{value}} est invalide.")]
+#[Assert\Email(message:"L'email est invalide.")]
 #[ORM\Column(length: 180)]
 private ?string $email = null; 
 

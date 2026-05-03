@@ -2,7 +2,6 @@
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container">
 
-    <!-- LOGO -->
   <a class="navbar-brand" href="{{ path('app_home') }}">
     <img
         src="{{ asset('images/logo-asimpa.png') }}"
@@ -11,17 +10,14 @@
     >
 </a> 
 
-    <!-- BURGER -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- CONTENU -->
     <div class="collapse navbar-collapse" id="navbarContent">
 
       <ul class="navbar-nav mx-auto">
 
-        <!-- ACCUEIL -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             Accueil
@@ -33,7 +29,6 @@
           </ul>
         </li>
 
-        <!-- PRESTATIONS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             Prestations
@@ -46,30 +41,30 @@
           </ul>
         </li>
 
-        <!-- TARIFS -->
+       
         <li class="nav-item">
           <a class="nav-link" href="{{ path('app_tarifs') }}">Tarifs</a>
         </li>
 
-        <!-- FORUM -->
+  
         <li class="nav-item">
           <a class="nav-link" href="{{ path('app_category') }}">Forum</a>
         </li>
 
-        <!-- CONTACT -->
+    
         <li class="nav-item">
           <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
         </li>
 
       </ul>
 
-      <!-- DROITE -->
       <div class="d-flex align-items-center gap-2">
       
        {% if app.user %}
           <a href="{{ path('app_logout') }}" class="nav-link small">Se déconnecter</a>
       {% else %}
-          <a href="{{ path('app_login') }}" class="nav-link small">Se connecter</a>
+          <a href="{{ path('app_login') }}" class="nav-link small">Connexion</a>
+          <a href="{{ path('app_register') }}" class="nav-link small">Inscription</a>
       {% endif %} 
 
         <a href="{{path('app_contact') }}" class="btn btn-primary btn-sm">Prendre rendez-vous</a>

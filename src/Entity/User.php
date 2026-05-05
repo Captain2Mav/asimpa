@@ -56,6 +56,10 @@ private ?string $email = null;
     #[ORM\Column(type: 'boolean')]
     private bool $isVerified = false;
 
+    #[ORM\Column]
+    private bool $isActive = true;
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,4 +142,16 @@ public function setIsVerified(bool $isVerified): self
 
     return $this;
 } 
+        public function isActive(): bool
+{
+    return $this->isActive;
+}
+
+public function setIsActive(bool $isActive): static
+{
+    $this->isActive = $isActive;
+
+    return $this;
+} 
+
 } 

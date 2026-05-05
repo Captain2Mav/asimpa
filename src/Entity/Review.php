@@ -24,7 +24,7 @@ class Review
     private ?int $rating = null;
 
     #[ORM\Column]
-    private ?bool $isApproved = null;
+    private ?bool $isApproved = false;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;

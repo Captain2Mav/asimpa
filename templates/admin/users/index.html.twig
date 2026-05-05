@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des utilisateurs{% endblock %}
+
+{% block body %}
+<section style="padding:40px;">
+    <h1>Gestion des utilisateurs</h1>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Rôles</th>
+                <th>Email vérifié</th>
+                <th>Statut</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.roles|join(', ') }}</td>
+                    <td>
+                        {% if user.isVerified %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
+
+                    <td>
+    {% if user.isActive %}
+        Actif
+    {% else %}
+        Désactivé
+    {% endif %}
+</td>
+
+    <td>
+        {% if user != app.user %}
+            <a href="{{ path('app_admin_user_toggle', {'id': user.id}) }}">
+                {% if user.isActive %}
+                    Désactiver
+                {% else %}
+                    Activer
+                {% endif %}
+            </a>
+        {% else %}
+            Compte actuel
+        {% endif %}
+    </td> 
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun utilisateur trouvé.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %} 

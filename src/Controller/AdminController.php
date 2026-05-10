@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 
-#[Route('/admin', name: 'app_admin_')]
+#[Route('/admin', name: 'app_admin')]
 #[IsGranted ('ROLE_ADMIN')]
 class AdminController extends AbstractController
 {
@@ -90,7 +90,7 @@ public function validate(Review $review, EntityManagerInterface $em): Response
     return $this->redirectToRoute('app_admin_reviews');
 } 
 
-     #[Route('/review/{id}/delete', name: 'app_admin_review_delete')]
+     #[Route('/review/{id}/delete', name: 'review_delete')]
 public function delete(Review $review, EntityManagerInterface $em): Response
 {
     $em->remove($review);

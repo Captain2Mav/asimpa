@@ -17,7 +17,7 @@
                 <p><strong>{{ comment.user.email }}</strong></p>
                 <p>{{ comment.content }}</p>
 
-                <form method="post" action="{{ path('app_admin_comment_delete', {'id': comment.id}) }}">
+                <form method="post" action="{{ path('app_admincomment_delete', {'id': comment.id}) }}">
                     <button style="background:red; color:white; padding:5px 10px;">
                         Supprimer
                     </button>

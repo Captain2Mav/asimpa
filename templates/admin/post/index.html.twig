@@ -11,13 +11,6 @@
         <div style="margin-bottom:20px; padding:10px; border:1px solid #ccc;">
             <h3>{{ post.title }}</h3>
             <p>{{ post.content }}</p>
-
-            <form method="post"
-                  action="{{ path('app_admin_post_delete', {'id': post.id}) }}">
-                <button style="background:red; color:white;">
-                    Supprimer
-                </button>
-            </form>
         </div>
     {% endfor %}
 {% endif %}

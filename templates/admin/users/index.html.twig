@@ -39,7 +39,7 @@
 
     <td>
         {% if user != app.user %}
-            <a href="{{ path('app_admin_user_toggle', {'id': user.id}) }}">
+            <a href="{{ path('app_adminuser_toggle', {'id': user.id}) }}">
                 {% if user.isActive %}
                     Désactiver
                 {% else %}

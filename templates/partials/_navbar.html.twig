@@ -63,8 +63,14 @@
        {% if app.user %}
           <a href="{{ path('app_logout') }}" class="nav-link small">Se déconnecter</a>
       {% else %}
-          <a href="{{ path('app_login') }}" class="nav-link small">Connexion</a>
+          <a href="{{ path('app_login') }}"class="nav-link small">Connexion</a>
           <a href="{{ path('app_register') }}" class="nav-link small">Inscription</a>
+      {% endif %} 
+
+        {% if is_granted('ROLE_ADMIN') %}
+          <a href="{{ path('app_admindashboard') }}"class="nav-link small">Espace privé</a>
+      {% else %}
+          <a href="{{ path('app_login') }}" class="nav-link small">Espace privé</a>
       {% endif %} 
 
         <a href="{{path('app_contact') }}" class="btn btn-primary btn-sm">Prendre rendez-vous</a>

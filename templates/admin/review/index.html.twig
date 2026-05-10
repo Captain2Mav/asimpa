@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello Admin/ReviewController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 <h1>Avis en attente de validation</h1>
@@ -11,8 +11,8 @@
         <p>{{ review.message }}</p>
         <p>Note : {{ review.rating }}/5</p>
 
-     <a href="{{ path('app_admin_review_validate', {'id': review.id}) }}">Valider</a>
-     <a href="{{ path('app_admin_review_delete', {'id': review.id}) }}">">Supprimer</a>
+     <a href="{{ path('app_adminreview_validate', {'id': review.id}) }}">Valider</a>
+     <a href="{{ path('app_adminreview_delete', {'id': review.id}) }}">">Supprimer</a>
     </div>
 {% else %}
     <p>Aucun avis en attente</p>
